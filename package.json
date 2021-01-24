@@ -2,9 +2,10 @@
   "name": "sojin.io",
   "private": true,
   "scripts": {
-    "lint": "eslint -c .eslintrc.js shared/**/*.{ts,tsx,js}"
+    "lint": "eslint -c .eslintrc.js {shared,services}/**/*.{ts,tsx,js}"
   },
   "workspaces": [
+    "services/*",
     "shared/*"
   ],
   "dependencies": {
