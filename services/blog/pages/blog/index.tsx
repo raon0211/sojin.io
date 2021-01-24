@@ -1,7 +1,15 @@
 import { fetchArticles } from '../../src/remotes/fetchArticles'
+import { H1 } from '@sojin-components/post'
+import { Article } from 'models/article'
 
-export default function Blog({ articles }: { articles: any }) {
-  return <div>{JSON.stringify(articles, null, 2)}</div>
+export default function Blog({ articles }: { articles: Article[] }) {
+  return (
+    <div>
+      {articles.map((article) => (
+        <H1 key={article.id}>{article.title}</H1>
+      ))}
+    </div>
+  )
 }
 
 export async function getStaticProps() {

@@ -9,6 +9,7 @@
   "dependencies": {
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "@sojin-components/post": "workspace:components/post",
     "@sojin/configs": "workspace:shared/configs",
     "@sojin/notion": "workspace:shared/notion",
     "@sojin/utils": "workspace:shared/utils",

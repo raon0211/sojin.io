@@ -27,6 +27,7 @@ export async function fetchArticles() {
       }
 
       return {
+        id: block.id,
         title: block.title,
       }
     })
