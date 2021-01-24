@@ -1,0 +1,6 @@
+{
+  "name": "@sojin/configs",
+  "dependencies": {
+    "babel-loader": "^8.2.2"
+  }
+}
