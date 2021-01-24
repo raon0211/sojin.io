@@ -2094,29 +2094,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@sojin/post@workspace:shared/post":
+"@sojin/post@workspace:components/post":
   version: 0.0.0-use.local
-  resolution: "@sojin/post@workspace:shared/post"
+  resolution: "@sojin/post@workspace:components/post"
   dependencies:
-    "@babel/core": ^7.12.10
-    "@emotion/babel-plugin": ^11.1.2
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.0.0
-    "@storybook/addon-essentials": ^6.1.15
-    "@storybook/addon-knobs": ^6.1.15
-    "@storybook/addons": ^6.1.15
-    "@storybook/react": ^6.1.15
-    "@storybook/theming": ^6.1.15
     "@types/babel__core": ^7
     "@types/react": ^17
     "@types/react-dom": ^17
-    babel-loader: ^8.2.2
-    core-js: ^3.8.3
     react: ^17.0.1
     react-dom: ^17.0.1
-    regenerator-runtime: ^0.13.7
     typescript: ^4.1.3
-    webpack: ^5.17.0
   peerDependencies:
     "@emotion/react": ^11
     "@emotion/styled": ^11
@@ -13639,6 +13628,13 @@ fsevents@~2.1.2:
     "@babel/preset-react": ^7.12.10
     "@babel/preset-typescript": ^7.12.7
     "@emotion/babel-plugin": ^11.1.2
+    "@emotion/react": ^11.1.4
+    "@emotion/styled": ^11.0.0
+    "@storybook/addon-essentials": ^6.1.15
+    "@storybook/addon-knobs": ^6.1.15
+    "@storybook/addons": ^6.1.15
+    "@storybook/react": ^6.1.15
+    "@storybook/theming": ^6.1.15
     "@types/babel__core": ^7
     "@types/babel__plugin-transform-runtime": ^7
     "@types/babel__preset-env": ^7
@@ -13649,12 +13645,18 @@ fsevents@~2.1.2:
     "@types/react-dom": ^17
     "@typescript-eslint/eslint-plugin": ^4.14.0
     "@typescript-eslint/parser": ^4.14.0
+    babel-loader: ^8.2.2
+    core-js: ^3.8.3
     eslint: ^7.18.0
     eslint-plugin-prettier: ^3.3.1
     eslint-plugin-react: ^7.22.0
     eslint-plugin-react-hooks: ^4.2.0
     prettier: ^2.2.1
+    react: ^17.0.1
+    react-dom: ^17.0.1
+    regenerator-runtime: ^0.13.7
     typescript: ^4.1.3
+    webpack: ^5.17.0
   languageName: unknown
   linkType: soft
 

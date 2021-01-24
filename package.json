@@ -2,9 +2,11 @@
   "name": "sojin.io",
   "private": true,
   "scripts": {
-    "lint": "eslint -c .eslintrc.js {shared,services}/**/*.{ts,tsx,js}"
+    "lint": "eslint -c .eslintrc.js {shared,services}/**/*.{ts,tsx,js}",
+    "storybook": "start-storybook -p 6006"
   },
   "workspaces": [
+    "components/*",
     "services/*",
     "shared/*"
   ],
@@ -22,6 +24,13 @@
     "typescript": "^4.1.3"
   },
   "devDependencies": {
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-knobs": "^6.1.15",
+    "@storybook/addons": "^6.1.15",
+    "@storybook/react": "^6.1.15",
+    "@storybook/theming": "^6.1.15",
     "@types/babel__core": "^7",
     "@types/babel__plugin-transform-runtime": "^7",
     "@types/babel__preset-env": "^7",
@@ -32,11 +41,17 @@
     "@types/react-dom": "^17",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.8.3",
     "eslint": "^7.18.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "regenerator-runtime": "^0.13.7",
+    "webpack": "^5.17.0"
   },
   "resolutions": {
     "@emotion/styled": "^11",
