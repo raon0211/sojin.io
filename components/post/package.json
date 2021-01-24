@@ -1,5 +1,5 @@
 {
-  "name": "@sojin/post",
+  "name": "@sojin-components/post",
   "main": "src/index.ts",
   "module": "src/index.ts",
   "devDependencies": {

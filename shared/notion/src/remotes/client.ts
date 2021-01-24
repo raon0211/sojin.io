@@ -11,8 +11,6 @@ export async function callNotionFunction<T>(
     throw new Error(`Environment variable NOTION_TOKEN is not defined.`)
   }
 
-  console.log(body)
-
   const response = await fetch(`${NOTION_ENDPOINT}/${functionName}`, {
     method: 'POST',
     headers: {
