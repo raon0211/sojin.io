@@ -1,0 +1,6 @@
+{
+  "name": "sojin.io",
+  "dependencies": {
+    "typescript": "^4.1.3"
+  }
+}
