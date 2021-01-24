@@ -1,0 +1,88 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 49f0078314f358ad76687c6bd1d564ce9f621b31..65bd98dbf47430a4f5ced27b9723af85cdb64912 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -3,8 +3,7 @@ import { Theme } from './types';
+ export declare const styled: CreateStyled<Theme>;
+ export * from './base';
+ export * from './types';
+-export * from '@emotion/core';
+-export * from 'emotion-theming';
++export * from '@emotion/react';
+ export { default as isPropValid } from '@emotion/is-prop-valid';
+ export { createGlobal, createReset } from './global';
+ export * from './create';
+diff --git a/dist/index.js b/dist/index.js
+index 4ede01cf4fe69a4160b0a79ee19a7101ce75ff3b..bbf55c36bdc470448690175fbaf69aa5e5443fc6 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -74,7 +74,7 @@ Object.keys(_types).forEach(function (key) {
+   });
+ });
+ 
+-var _core = require("@emotion/core");
++var _core = require("@emotion/react");
+ 
+ Object.keys(_core).forEach(function (key) {
+   if (key === "default" || key === "__esModule") return;
+@@ -88,20 +88,6 @@ Object.keys(_core).forEach(function (key) {
+   });
+ });
+ 
+-var _emotionTheming = require("emotion-theming");
+-
+-Object.keys(_emotionTheming).forEach(function (key) {
+-  if (key === "default" || key === "__esModule") return;
+-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+-  if (key in exports && exports[key] === _emotionTheming[key]) return;
+-  Object.defineProperty(exports, key, {
+-    enumerable: true,
+-    get: function get() {
+-      return _emotionTheming[key];
+-    }
+-  });
+-});
+-
+ var _isPropValid = _interopRequireDefault(require("@emotion/is-prop-valid"));
+ 
+ var _global = require("./global");
+diff --git a/paths.js b/paths.js
+index b356b4ae3235a87612a9397099343ec3a66ce77c..925bad454f715a40bc897c3251d6cdff5064c880 100644
+--- a/paths.js
++++ b/paths.js
+@@ -6,7 +6,6 @@ const resolve = resolveFrom.bind(null, __dirname);
+ // These paths need to be aliased in the manager webpack config to ensure that all
+ // code running inside the manager uses the *same* versions of each package.
+ module.exports = {
+-  '@emotion/core': dirname(resolve('@emotion/core/package.json')),
++  '@emotion/react': dirname(resolve('@emotion/react/package.json')),
+   '@emotion/styled': dirname(resolve('@emotion/styled/package.json')),
+-  'emotion-theming': dirname(resolve('emotion-theming/package.json')),
+ };
+diff --git a/ts3.4/dist/index.d.ts b/ts3.4/dist/index.d.ts
+index bbd16c89740701fa04535c19210478294b7ddf19..816790807fd2a0529a3944056dad8f895ae5c8a0 100644
+--- a/ts3.4/dist/index.d.ts
++++ b/ts3.4/dist/index.d.ts
+@@ -3,8 +3,7 @@ import { Theme } from './types';
+ export declare const styled: CreateStyled<Theme>;
+ export * from './base';
+ export * from './types';
+-export * from '@emotion/core';
+-export * from 'emotion-theming';
++export * from '@emotion/react';
+ export { default as isPropValid } from '@emotion/is-prop-valid';
+ export { createGlobal, createReset } from './global';
+ export * from './create';
+diff --git a/dist/animation.js b/dist/animation.js
+index 8f6558b4737ee180d2349dea871ba306214782ff..17b970da8bc8f3f0cc5ebb091d5b5f0e0f22f985 100644
+--- a/dist/animation.js
++++ b/dist/animation.js
+@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
+ });
+ exports.animation = exports.easing = void 0;
+ 
+-var _core = require("@emotion/core");
++var _core = require("@emotion/react");
+ 
+ function _templateObject4() {
+   var data = _taggedTemplateLiteral(["\n  0%, 100% { transform:translate3d(0,0,0); }\n  12.5%, 62.5% { transform:translate3d(-4px,0,0); }\n  37.5%, 87.5% {  transform: translate3d(4px,0,0);  }\n"]);

@@ -1,0 +1,16 @@
+diff --git a/dist/server/common/babel.js b/dist/server/common/babel.js
+index a9a44b87c80e797005971b9c70a2bb09f53e7df9..6580ff21ecf603cc5e47ef750f1d565c47f43c5f 100644
+--- a/dist/server/common/babel.js
++++ b/dist/server/common/babel.js
+@@ -40,9 +40,9 @@ var babelConfig = function () {
+   return {
+     sourceType: 'unambiguous',
+     presets: [...presets],
+-    plugins: [...plugins, [require.resolve('babel-plugin-emotion'), {
++    plugins: [...plugins, [require.resolve('@emotion/babel-plugin'), {
+       sourceMap: true,
+-      autoLabel: true
++      autoLabel: 'always'
+     }]]
+   };
+ };
