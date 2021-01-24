@@ -1,6 +1,11 @@
 {
   "name": "@sojin/configs",
   "dependencies": {
-    "babel-loader": "^8.2.2"
+    "@babel/core": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.17.0"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7"
   }
 }

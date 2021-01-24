@@ -1,5 +1,5 @@
 {
-  "name": "@sojin/blog",
+  "name": "@sojin-services/blog",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,13 +9,19 @@
   "dependencies": {
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "@sojin/configs": "workspace:shared/configs",
+    "@sojin/notion": "workspace:shared/notion",
+    "@sojin/utils": "workspace:shared/utils",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
+    "constants": "link:./src/constants",
     "dotenv": "^8.2.0",
+    "models": "link:./src/models",
     "next": "^10.0.5",
     "pages": "link:./src/pages",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "remotes": "link:./src/remotes",
     "typescript": "^4.1.3"
   }
 }

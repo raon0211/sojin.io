@@ -1,6 +1,15 @@
 import { NotionBlock } from '../../models'
 
-export type NotionBlockResponse = NotionCollectionViewBlockResponse
+export type NotionBlockResponse =
+  | NotionPageBlockResponse
+  | NotionCollectionViewBlockResponse
+
+export interface NotionPageBlockResponse {
+  type: 'page'
+  id: string
+  parent_id: string
+  properties?: { title: string[][] }
+}
 
 export interface NotionCollectionViewBlockResponse {
   type: 'collection_view'
@@ -14,6 +23,13 @@ export function parseNotionBlockResponse(
   block: NotionBlockResponse
 ): NotionBlock | null {
   switch (block.type) {
+    case 'page':
+      return {
+        id,
+        type: 'page',
+        parentId: block.parent_id,
+        title: block.properties?.title[0][0] ?? null,
+      }
     case 'collection_view':
       return {
         id,

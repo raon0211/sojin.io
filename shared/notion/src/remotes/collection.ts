@@ -1,5 +1,5 @@
 import { isNotNil } from '@sojin/utils'
-import { NotionCollectionViewBlock } from '../models'
+import { isPageBlock, NotionCollectionViewBlock } from '../models'
 import { callNotionFunction } from './client'
 import { parseNotionBlockResponse } from './types/block'
 import { NotionRecordMapResponse } from './types/record-map'
@@ -33,7 +33,7 @@ export async function fetchNotionCollection(
         query: {
           aggregations: [
             {
-              aggregation_type: 'count',
+              aggregator: 'count',
               property: 'title',
             },
           ],
@@ -42,7 +42,7 @@ export async function fetchNotionCollection(
     }
   )
 
-  return response.result.blockIds
+  const blocks = response.result.blockIds
     .map((blockId) => {
       return parseNotionBlockResponse(
         blockId,
@@ -50,7 +50,7 @@ export async function fetchNotionCollection(
       )
     })
     .filter(isNotNil)
-    .filter((block) => {
-      return block.type === 'collection_view'
-    })
+    .filter(isPageBlock)
+
+  return { blocks }
 }
