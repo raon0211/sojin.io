@@ -1840,6 +1840,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sojin/notion@workspace:shared/notion":
+  version: 0.0.0-use.local
+  resolution: "@sojin/notion@workspace:shared/notion"
+  dependencies:
+    "@sojin/utils": "workspace:shared/utils"
+    cross-fetch: ^3.0.6
+  languageName: unknown
+  linkType: soft
+
 "@sojin/post@workspace:shared/post":
   version: 0.0.0-use.local
   resolution: "@sojin/post@workspace:shared/post"
@@ -1868,6 +1877,12 @@ __metadata:
     "@emotion/styled": ^11
     react: ^16 || ^17
     react-dom: ^16 || ^17
+  languageName: unknown
+  linkType: soft
+
+"@sojin/utils@workspace:shared/utils":
+  version: 0.0.0-use.local
+  resolution: "@sojin/utils@workspace:shared/utils"
   languageName: unknown
   linkType: soft
 
@@ -5525,6 +5540,15 @@ __metadata:
     prop-types: ^15.0.0
     react: ^0.14.0 || ^15.0.0 || ^16.0.0
   checksum: dfb153bbcfe44fb0b5d74e097f41fef382c9ea513084f604fea1759aea6683da0eef13b02ede2f0672c4eeacdd8efce0023935ca02909fcb2ae8be28b9aa63f5
+  languageName: node
+  linkType: hard
+
+"cross-fetch@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "cross-fetch@npm:3.0.6"
+  dependencies:
+    node-fetch: 2.6.1
+  checksum: a491ad1b89988a351f8b8b252b68a5e653636d911042648c43a806cf7575ff043379a80d6269102ca60ec633af0b49ca4c83536007793bb0e65e491769f70d9d
   languageName: node
   linkType: hard
 
@@ -9518,7 +9542,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.0":
+"node-fetch@npm:2.6.1, node-fetch@npm:^2.6.0":
   version: 2.6.1
   resolution: "node-fetch@npm:2.6.1"
   checksum: cbb171635e538162b977eac5dfe7a1e07a9a02e991924377a6435502291e2f823d306b95aabc455caebf4a118ccf836868462bc70ccc3095af02bb9da61fda37

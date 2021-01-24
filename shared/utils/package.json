@@ -1,0 +1,5 @@
+{
+  "name": "@sojin/utils",
+  "main": "src/index.ts",
+  "module": "src/index.ts"
+}

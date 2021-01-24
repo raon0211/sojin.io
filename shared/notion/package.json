@@ -1,0 +1,8 @@
+{
+  "name": "@sojin/notion",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@sojin/utils": "workspace:shared/utils",
+    "cross-fetch": "^3.0.6"
+  }
+}

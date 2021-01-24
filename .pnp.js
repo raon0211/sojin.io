@@ -23,14 +23,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."
       },
       {
+        "name": "@sojin/notion",
+        "reference": "workspace:shared/notion"
+      },
+      {
         "name": "@sojin/post",
         "reference": "workspace:shared/post"
+      },
+      {
+        "name": "@sojin/utils",
+        "reference": "workspace:shared/utils"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
+      ["@sojin/notion", ["workspace:shared/notion"]],
       ["@sojin/post", ["workspace:shared/post"]],
+      ["@sojin/utils", ["workspace:shared/utils"]],
       ["sojin.io", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -4286,6 +4296,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@sojin/notion", [
+        ["workspace:shared/notion", {
+          "packageLocation": "./shared/notion/",
+          "packageDependencies": [
+            ["@sojin/notion", "workspace:shared/notion"],
+            ["@sojin/utils", "workspace:shared/utils"],
+            ["cross-fetch", "npm:3.0.6"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@sojin/post", [
         ["workspace:shared/post", {
           "packageLocation": "./shared/post/",
@@ -4310,6 +4331,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regenerator-runtime", "npm:0.13.7"],
             ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"],
             ["webpack", "virtual:bc6509a77e82b643bca772cd008124a387fa737527dc134807b119867fc1f16d970c739edf2fbba458e4e212d781ade3420c8587ff2eaba5528a0bbf24e55789#npm:5.17.0"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@sojin/utils", [
+        ["workspace:shared/utils", {
+          "packageLocation": "./shared/utils/",
+          "packageDependencies": [
+            ["@sojin/utils", "workspace:shared/utils"]
           ],
           "linkType": "SOFT",
         }]
@@ -8638,6 +8668,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react",
             "prop-types",
             "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["cross-fetch", [
+        ["npm:3.0.6", {
+          "packageLocation": "./.yarn/cache/cross-fetch-npm-3.0.6-6e1e683a4e-a491ad1b89.zip/node_modules/cross-fetch/",
+          "packageDependencies": [
+            ["cross-fetch", "npm:3.0.6"],
+            ["node-fetch", "npm:2.6.1"]
           ],
           "linkType": "HARD",
         }]
