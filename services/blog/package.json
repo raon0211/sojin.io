@@ -9,6 +9,8 @@
   "dependencies": {
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "@sojin-components/emotion-utils": "workspace:components/emotion-utils",
+    "@sojin-components/navigation": "workspace:components/navigation",
     "@sojin-components/post": "workspace:components/post",
     "@sojin/configs": "workspace:shared/configs",
     "@sojin/notion": "workspace:shared/notion",
@@ -23,6 +25,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "remotes": "link:./src/remotes",
+    "routes": "link:./src/routes",
     "typescript": "^4.1.3"
   }
 }
