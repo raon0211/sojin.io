@@ -1,0 +1,5 @@
+{
+  "name": "@sojin/type-helpers",
+  "main": "src/index.ts",
+  "module": "src/index.ts"
+}

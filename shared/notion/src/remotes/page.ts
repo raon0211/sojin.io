@@ -33,7 +33,10 @@ export async function fetchNotionPage({
 
   const blocks = Object.entries(response.recordMap.block)
     .map(([id, blockResponse]) => {
-      return parseNotionBlockResponse(id, blockResponse.value)
+      return parseNotionBlockResponse({
+        id,
+        block: blockResponse.value,
+      })
     })
     .filter(isNotNil)
 

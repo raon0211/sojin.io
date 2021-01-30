@@ -1,1 +1,1 @@
-export const LAYOUT_MAX_WIDTH = '900px'
+export const LAYOUT_MAX_WIDTH = '800px'

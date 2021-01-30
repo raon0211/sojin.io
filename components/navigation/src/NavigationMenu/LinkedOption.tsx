@@ -3,7 +3,6 @@ import { DIMMED_BACKGROUND } from '@sojin-components/constants'
 import { AnchorHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
 import { NavigationMenuOption } from './Option'
 import {
-  anchorReset,
   fontColorTextSecondary,
   fontSizeSmall,
 } from '@sojin-components/emotion-utils'
@@ -31,7 +30,6 @@ export function NavigationMenuLinkedOption({
 }
 
 const Anchor = styled.a`
-  ${anchorReset()}
   ${fontSizeSmall()}
   ${fontColorTextSecondary()}
   padding: 10px;

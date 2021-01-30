@@ -1,3 +1,3 @@
 export * from './top'
 export * from './bottom'
-export * from './margin'
+export * from './padding'

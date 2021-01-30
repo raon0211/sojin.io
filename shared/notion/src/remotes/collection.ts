@@ -17,11 +17,13 @@ interface NotionQueryCollectionResponse {
 export async function fetchNotionCollection(
   collectionBlock: NotionCollectionViewBlock
 ) {
+  const collectionId = collectionBlock.collectionId
+
   const response = await callNotionFunction<NotionQueryCollectionResponse>(
     'queryCollection',
     {
       body: {
-        collectionId: collectionBlock.collectionId,
+        collectionId: collectionId,
         collectionViewId: collectionBlock.viewIds[0],
         loader: {
           // TODO: Find out notion's pagination handling method
@@ -42,12 +44,21 @@ export async function fetchNotionCollection(
     }
   )
 
+  const collection = response.recordMap.collection?.[collectionId]
+
+  if (collection == null) {
+    throw new Error(
+      `Expected collection for ID ${collectionId} not to be empty, but received '${collection}'`
+    )
+  }
+
   const blocks = response.result.blockIds
     .map((blockId) => {
-      return parseNotionBlockResponse(
-        blockId,
-        response.recordMap.block[blockId].value
-      )
+      return parseNotionBlockResponse({
+        id: blockId,
+        block: response.recordMap.block[blockId].value,
+        schema: collection.value.schema,
+      })
     })
     .filter(isNotNil)
     .filter(isPageBlock)

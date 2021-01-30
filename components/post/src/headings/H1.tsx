@@ -1,14 +1,14 @@
 import styled from '@emotion/styled'
-import { FONT_SIZE_TITLE } from '@sojin-components/constants'
+import { FONT_SIZE_H1 } from '@sojin-components/constants'
 import {
-  typographyTitle,
+  typographyH1,
   marginTop,
   marginBottom,
 } from '@sojin-components/emotion-utils'
 
 const H1 = styled.h1`
-  ${typographyTitle()}
-  ${marginTop(FONT_SIZE_TITLE)}
+  ${typographyH1()}
+  ${marginTop(FONT_SIZE_H1)}
 	${marginBottom(4)}
 `
 

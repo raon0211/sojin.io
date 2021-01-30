@@ -1,4 +1,14 @@
-import { NotionBlock } from '../../models'
+import { createObjectByKey, isNotNil } from '@sojin/utils'
+import {
+  NotionBlock,
+  NotionPageBlockProperty,
+  parseNotionPageBlockProperty,
+  parsePropertyValueOfType,
+} from '../../models'
+import {
+  NotionCollectionItemSchema,
+  NotionCollectionSchemaType,
+} from './collection'
 
 export type NotionBlockResponse =
   | NotionPageBlockResponse
@@ -8,7 +18,9 @@ export interface NotionPageBlockResponse {
   type: 'page'
   id: string
   parent_id: string
-  properties?: { title: string[][] }
+  properties?: {
+    [propertyName: string]: string[][] | undefined
+  }
 }
 
 export interface NotionCollectionViewBlockResponse {
@@ -18,18 +30,30 @@ export interface NotionCollectionViewBlockResponse {
   parent_id: string
 }
 
-export function parseNotionBlockResponse(
-  id: string,
+export function parseNotionBlockResponse({
+  id,
+  block,
+  schema,
+}: {
+  id: string
   block: NotionBlockResponse
-): NotionBlock | null {
+  schema?: NotionCollectionItemSchema
+}): NotionBlock | null {
   switch (block.type) {
-    case 'page':
+    case 'page': {
+      const properties = parsePageProperties(block.properties, schema)
+
       return {
         id,
         type: 'page',
         parentId: block.parent_id,
-        title: block.properties?.title[0][0] ?? null,
+        title: parsePropertyValueOfType(
+          properties.Page,
+          NotionCollectionSchemaType.title
+        ),
+        properties,
       }
+    }
     case 'collection_view':
       return {
         id,
@@ -41,4 +65,21 @@ export function parseNotionBlockResponse(
     default:
       return null
   }
+}
+
+function parsePageProperties(
+  properties: NotionPageBlockResponse['properties'],
+  schema: NotionCollectionItemSchema | undefined
+) {
+  if (properties == null || schema == null) {
+    return {}
+  }
+
+  const items = Object.entries(properties)
+    .map(([key, value]): NotionPageBlockProperty | null => {
+      return parseNotionPageBlockProperty(schema, key, value)
+    })
+    .filter(isNotNil)
+
+  return createObjectByKey(items, (x) => x.name)
 }

@@ -2162,7 +2162,9 @@ __metadata:
     "@types/react": ^17.0.0
     components: "link:./src/components"
     constants: "link:./src/constants"
+    date-fns: ^2.16.1
     dotenv: ^8.2.0
+    emotion-normalize: ^11.0.1
     models: "link:./src/models"
     next: ^10.0.5
     pages: "link:./src/pages"
@@ -2194,9 +2196,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sojin/type-helpers@workspace:shared/type-helpers":
+  version: 0.0.0-use.local
+  resolution: "@sojin/type-helpers@workspace:shared/type-helpers"
+  languageName: unknown
+  linkType: soft
+
 "@sojin/utils@workspace:shared/utils":
   version: 0.0.0-use.local
   resolution: "@sojin/utils@workspace:shared/utils"
+  dependencies:
+    "@sojin/type-helpers": "workspace:shared/type-helpers"
+  peerDependencies:
+    "@sojin/type-helpers": "*"
   languageName: unknown
   linkType: soft
 
@@ -6431,6 +6443,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^2.16.1":
+  version: 2.16.1
+  resolution: "date-fns@npm:2.16.1"
+  checksum: fbe5d9aa1dc4c92c7cf9c0b31e58f532ac9fe059f85fc622641b1ac9c673150329620ea6bf941a8ba10e8e677aa0b6ccdc04ce001f81e70fd49acd1760edcba0
+  languageName: node
+  linkType: hard
+
 "debug@npm:2.6.9, debug@npm:^2.2.0, debug@npm:^2.3.3, debug@npm:^2.6.0":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -7010,6 +7029,16 @@ __metadata:
   version: 3.0.0
   resolution: "emojis-list@npm:3.0.0"
   checksum: a79126b55bc86ee8fd938235a6adf9d457c05fb5bb934e8608b7d35c878d9d1e312a67759244f5c3fba0810b508eb5617e5e6ad6886496ebcfa6832d1c8de3c4
+  languageName: node
+  linkType: hard
+
+"emotion-normalize@npm:^11.0.1":
+  version: 11.0.1
+  resolution: "emotion-normalize@npm:11.0.1"
+  peerDependencies:
+    "@emotion/react": ^11.0.0
+    react: ">=16.3.0"
+  checksum: 92cfa5a996b3e5201304ffb33b1595a57fd70a16f313a933b92df57a8561c032a582d53a1e53066057736bd7f99a30d28a0fc7012c3109373f26a0781b86362c
   languageName: node
   linkType: hard
 

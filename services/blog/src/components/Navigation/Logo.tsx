@@ -9,7 +9,6 @@ import {
   flex,
   gutterHorizontal,
   gutterVertical,
-  anchorReset,
   fontWeight,
 } from '@sojin-components/emotion-utils'
 
@@ -27,7 +26,7 @@ function NavigationLogo({ href, onClick }: Props, ref: Ref<HTMLAnchorElement>) {
       ref={ref}
       href={href}
       onClick={onClick}
-      css={[flex({ alignItems: 'center' }), gutterHorizontal(8), anchorReset()]}
+      css={[flex({ alignItems: 'center' }), gutterHorizontal(8)]}
     >
       <img
         src={PROFILE_IMAGE_URL}
