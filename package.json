@@ -2,9 +2,10 @@
   "name": "sojin.io",
   "private": true,
   "scripts": {
-    "lint": "eslint -c .eslintrc.js {shared,services}/**/*.{ts,tsx,js}",
+    "lint": "eslint -c .eslintrc.js {shared,services,components}/**/*.{ts,tsx,js}",
     "storybook": "start-storybook -p 6006",
-    "typecheck": "yarn tsc --noEmit"
+    "typecheck": "yarn tsc --noEmit",
+    "postinstall": "husky install"
   },
   "workspaces": [
     "components/*",
@@ -49,6 +50,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "next",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
