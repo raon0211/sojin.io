@@ -1,6 +1,6 @@
 import {
   fetchNotionCollection,
-  fetchNotionPage,
+  fetchNotionPageBlocks,
   isCollectionViewBlock,
   parsePropertyValueOfType,
   NotionCollectionSchemaType,
@@ -10,11 +10,11 @@ import { BLOG_INDEX_ID } from 'constants/blog-index-id'
 import { Article } from '../models/article'
 
 export async function fetchArticles() {
-  const page = await fetchNotionPage({
+  const blocks = await fetchNotionPageBlocks({
     pageId: BLOG_INDEX_ID,
   })
 
-  const collectionView = page.blocks.find(isCollectionViewBlock)
+  const collectionView = blocks.find(isCollectionViewBlock)
 
   if (collectionView == null) {
     throw new Error('There is no collection_view stored in notion.')

@@ -6,7 +6,11 @@ import ArticleItem from '../../src/components/ArticleItem'
 import Link from 'next/link'
 import { ROUTES } from '../../src/routes'
 
-export default function Blog({ articles }: { articles: Article[] }) {
+interface Props {
+  articles: Article[]
+}
+
+export default function Blog({ articles }: Props) {
   return (
     <>
       <H1 css={marginBottom(28)}>최근 올라온 글</H1>

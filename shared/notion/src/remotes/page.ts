@@ -1,5 +1,5 @@
 import { isNotNil } from '@sojin/utils'
-import { NotionPage } from '../models'
+import { NotionBlock } from '../models'
 import { callNotionFunction } from './client'
 import { parseNotionBlockResponse } from './types/block'
 import { NotionRecordMapResponse } from './types/record-map'
@@ -13,9 +13,9 @@ interface NotionPageResponse {
   recordMap: NotionRecordMapResponse
 }
 
-export async function fetchNotionPage({
+export async function fetchNotionPageBlocks({
   pageId,
-}: Options): Promise<NotionPage> {
+}: Options): Promise<NotionBlock[]> {
   const response = await callNotionFunction<NotionPageResponse>(
     'loadPageChunk',
     {
@@ -31,8 +31,18 @@ export async function fetchNotionPage({
     }
   )
 
-  const blocks = Object.entries(response.recordMap.block)
-    .map(([id, blockResponse]) => {
+  const pageBlock = response.recordMap.block[pageId]
+
+  if (pageBlock?.value.type !== 'page') {
+    throw new Error(
+      `Expected pageBlock type to be page, but got ${pageBlock.value.type}`
+    )
+  }
+
+  const blocks = pageBlock.value.content
+    .map((id) => {
+      const blockResponse = response.recordMap.block[id]
+
       return parseNotionBlockResponse({
         id,
         block: blockResponse.value,
@@ -40,7 +50,5 @@ export async function fetchNotionPage({
     })
     .filter(isNotNil)
 
-  return {
-    blocks,
-  }
+  return blocks
 }

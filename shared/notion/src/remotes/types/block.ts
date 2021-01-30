@@ -2,6 +2,7 @@ import { createObjectByKey, isNotNil } from '@sojin/utils'
 import {
   NotionBlock,
   NotionPageBlockProperty,
+  NotionPostBlock,
   parseNotionPageBlockProperty,
   parsePropertyValueOfType,
 } from '../../models'
@@ -13,14 +14,18 @@ import {
 export type NotionBlockResponse =
   | NotionPageBlockResponse
   | NotionCollectionViewBlockResponse
+  | NotionTextBlockResponse
+
+interface NotionPageProperties {
+  [propertyName: string]: string[][] | undefined
+}
 
 export interface NotionPageBlockResponse {
   type: 'page'
   id: string
   parent_id: string
-  properties?: {
-    [propertyName: string]: string[][] | undefined
-  }
+  content: string[]
+  properties?: NotionPageProperties
 }
 
 export interface NotionCollectionViewBlockResponse {
@@ -28,6 +33,12 @@ export interface NotionCollectionViewBlockResponse {
   collection_id: string
   view_ids: string[]
   parent_id: string
+}
+
+export interface NotionTextBlockResponse {
+  type: 'header' | 'sub_header' | 'text'
+  parent_id: string
+  properties?: NotionPageProperties
 }
 
 export function parseNotionBlockResponse({
@@ -62,6 +73,18 @@ export function parseNotionBlockResponse({
         viewIds: block.view_ids,
         parentId: block.parent_id,
       }
+    case 'header':
+    case 'sub_header':
+    case 'text': {
+      const postBlock: NotionPostBlock = {
+        id,
+        type: block.type,
+        value: block.properties?.title?.[0][0] ?? null,
+        parentId: block.parent_id,
+      }
+
+      return postBlock
+    }
     default:
       return null
   }
