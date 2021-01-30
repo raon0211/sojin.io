@@ -2190,6 +2190,7 @@ __metadata:
   resolution: "@sojin/notion@workspace:shared/notion"
   dependencies:
     "@sojin/utils": "workspace:shared/utils"
+    "@types/node": ^14.14.22
     cross-fetch: ^3.0.6
   languageName: unknown
   linkType: soft

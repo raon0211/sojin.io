@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "lint": "eslint -c .eslintrc.js {shared,services}/**/*.{ts,tsx,js}",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "typecheck": "yarn tsc --noEmit"
   },
   "workspaces": [
     "components/*",
