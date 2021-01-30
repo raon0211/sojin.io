@@ -2081,6 +2081,7 @@ __metadata:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.0.0
     "@sojin-components/constants": "workspace:components/constants"
+    "@sojin-components/emotion-utils": "workspace:components/emotion-utils"
     "@types/react": ^17
     "@types/react-dom": ^17
     react: ^17.0.1
@@ -2127,6 +2128,7 @@ __metadata:
     "@sojin/utils": "workspace:shared/utils"
     "@types/node": ^14.14.22
     "@types/react": ^17.0.0
+    components: "link:./src/components"
     constants: "link:./src/constants"
     dotenv: ^8.2.0
     models: "link:./src/models"
@@ -5895,6 +5897,12 @@ __metadata:
   checksum: fc4edbf1014f0aed88dcec33ca02d2938734e428423f640d8a3f94975615b8e8c506c19e29b93949637c5a281353e75fa79e299e0d57732f42a9fe346cb2cad6
   languageName: node
   linkType: hard
+
+"components@link:./src/components::locator=%40sojin-services%2Fblog%40workspace%3Aservices%2Fblog":
+  version: 0.0.0-use.local
+  resolution: "components@link:./src/components::locator=%40sojin-services%2Fblog%40workspace%3Aservices%2Fblog"
+  languageName: node
+  linkType: soft
 
 "compose-function@npm:3.0.3":
   version: 3.0.3

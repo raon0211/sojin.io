@@ -5,17 +5,26 @@ import {
   NAVBAR_HEIGHT,
   NAVBAR_HORIZONTAL_PADDING,
 } from '@sojin-components/constants'
+import { flex, gutterHorizontal } from '@sojin-components/emotion-utils'
 
 interface Props {
   left?: ReactNode
   right?: ReactNode
 }
 
-export function Navigation({ left, right }: Props) {
+export function NavigationBar({ left, right }: Props) {
   return (
     <Wrapper>
-      <Container>
-        <LeftContainer>{left}</LeftContainer>
+      <Container css={gutterHorizontal(24)}>
+        <div
+          css={[
+            flex({
+              alignItems: 'center',
+            }),
+          ]}
+        >
+          {left}
+        </div>
         <RightContainer>{right}</RightContainer>
       </Container>
     </Wrapper>
@@ -36,10 +45,6 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 ${NAVBAR_HORIZONTAL_PADDING};
   display: flex;
-`
-
-const LeftContainer = styled.div`
-  margin-right: 24px;
 `
 
 const RightContainer = styled.div`

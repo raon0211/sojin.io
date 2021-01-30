@@ -1,6 +1,5 @@
 import { forwardRef, Ref } from 'react'
 import {
-  gutter,
   backgroundColor,
   circle,
   fontSizeRegular,
@@ -8,6 +7,10 @@ import {
   fontColorTextSecondary,
   fontSizeSmall,
   flex,
+  gutterHorizontal,
+  gutterVertical,
+  anchorReset,
+  fontWeight,
 } from '@sojin-components/emotion-utils'
 
 const PROFILE_IMAGE_URL = 'https://static.sojin.io/images/leo.jpg'
@@ -18,24 +21,23 @@ interface Props {
   onClick?: () => void
 }
 
-function NavigationMainLink(
-  { href, onClick }: Props,
-  ref: Ref<HTMLAnchorElement>
-) {
+function NavigationLogo({ href, onClick }: Props, ref: Ref<HTMLAnchorElement>) {
   return (
     <a
       ref={ref}
       href={href}
       onClick={onClick}
-      css={[flex({ alignItems: 'center' }), gutter('horizontal', 8)]}
+      css={[flex({ alignItems: 'center' }), gutterHorizontal(8), anchorReset()]}
     >
       <img
         src={PROFILE_IMAGE_URL}
         alt=""
         css={[circle('3rem'), backgroundColor(PROFILE_IMAGE_SUMMARY_COLOR)]}
       />
-      <div css={gutter('vertical')}>
-        <div css={[fontSizeRegular(), fontColorText()]}>Sojin Park</div>
+      <div css={gutterVertical(8)}>
+        <div css={[fontSizeRegular(), fontColorText(), fontWeight(700)]}>
+          Sojin Park
+        </div>
         <small css={[fontSizeSmall(), fontColorTextSecondary()]}>
           Frontend Dev
         </small>
@@ -44,4 +46,4 @@ function NavigationMainLink(
   )
 }
 
-export default forwardRef(NavigationMainLink)
+export default forwardRef(NavigationLogo)

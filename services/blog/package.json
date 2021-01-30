@@ -17,6 +17,7 @@
     "@sojin/utils": "workspace:shared/utils",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
+    "components": "link:./src/components",
     "constants": "link:./src/constants",
     "dotenv": "^8.2.0",
     "models": "link:./src/models",
