@@ -1,3 +1,11 @@
+const pnpapi = require('pnpapi')
+
+const INTERNAL_PACKAGE_SCOPES = [
+  '@sojin/',
+  '@sojin-components/',
+  '@sojin-services/',
+]
+
 module.exports = {
   presets: [
     '@babel/preset-typescript',
@@ -16,7 +24,16 @@ module.exports = {
   ],
   overrides: [
     {
-      test: ['./components', './services'],
+      test: (value) => {
+        const locator = pnpapi.findPackageLocator(value)
+        const name = locator?.name
+
+        if (name != null) {
+          return INTERNAL_PACKAGE_SCOPES.some((scope) => name.startsWith(scope))
+        } else {
+          return false
+        }
+      },
       plugins: ['@emotion/babel-plugin'],
       presets: [
         [
