@@ -9,7 +9,7 @@ import { ROUTES } from '../../src/routes'
 export default function Blog({ articles }: { articles: Article[] }) {
   return (
     <>
-      <H1 css={marginBottom(16)}>최근 올라온 글</H1>
+      <H1 css={marginBottom(28)}>최근 올라온 글</H1>
 
       <ul>
         {articles.map((article) => (
