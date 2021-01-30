@@ -9,6 +9,8 @@
   "dependencies": {
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "@sojin-components/constants": "workspace:components/constants",
+    "@sojin-components/container": "workspace:components/container",
     "@sojin-components/emotion-utils": "workspace:components/emotion-utils",
     "@sojin-components/navigation": "workspace:components/navigation",
     "@sojin-components/post": "workspace:components/post",

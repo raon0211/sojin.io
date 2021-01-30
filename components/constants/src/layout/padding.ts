@@ -1,0 +1,1 @@
+export const LAYOUT_HORIZONTAL_PADDING = '24px'

@@ -12,7 +12,8 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11",
-    "@emotion/styled": "^11"
+    "@emotion/styled": "^11",
+    "@sojin-components/constants": "*"
   },
   "dependencies": {
     "@sojin-components/constants": "workspace:components/constants"

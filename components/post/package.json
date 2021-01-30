@@ -14,7 +14,13 @@
   "peerDependencies": {
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@sojin-components/constants": "*",
+    "@sojin-components/emotion-utils": "*",
     "react": "^16 || ^17",
     "react-dom": "^16 || ^17"
+  },
+  "dependencies": {
+    "@sojin-components/constants": "workspace:components/constants",
+    "@sojin-components/emotion-utils": "workspace:components/emotion-utils"
   }
 }
