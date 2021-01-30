@@ -1,7 +1,6 @@
-export const BLOG_INDEX_ID = (() => {
-  if (process.env.BLOG_INDEX_ID != null) {
-    return process.env.BLOG_INDEX_ID
-  }
+import { ensureNotEmpty } from '@sojin/utils'
 
-  throw new Error(`Environment variable 'BLOG_INDEX_ID' is not set.`)
-})()
+export const BLOG_INDEX_ID = ensureNotEmpty(
+  'BLOG_INDEX_ID',
+  process.env.BLOG_INDEX_ID
+)

@@ -104,6 +104,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__preset-env", "npm:7.9.1"],
             ["@types/eslint", "npm:7.2.6"],
             ["@types/eslint-plugin-prettier", "npm:3.1.0"],
+            ["@types/node", "npm:14.14.22"],
             ["@types/prettier", "npm:2.1.6"],
             ["@types/react", "npm:17.0.0"],
             ["@types/react-dom", "npm:17.0.0"],
@@ -4925,7 +4926,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@sojin/notion", "workspace:shared/notion"],
             ["@sojin/utils", "workspace:shared/utils"],
-            ["@types/node", "npm:14.14.22"],
             ["cross-fetch", "npm:3.0.6"]
           ],
           "linkType": "SOFT",
@@ -18413,6 +18413,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel__preset-env", "npm:7.9.1"],
             ["@types/eslint", "npm:7.2.6"],
             ["@types/eslint-plugin-prettier", "npm:3.1.0"],
+            ["@types/node", "npm:14.14.22"],
             ["@types/prettier", "npm:2.1.6"],
             ["@types/react", "npm:17.0.0"],
             ["@types/react-dom", "npm:17.0.0"],
