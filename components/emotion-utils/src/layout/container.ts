@@ -4,11 +4,11 @@ import {
   LAYOUT_HORIZONTAL_PADDING,
 } from '@sojin-components/constants'
 
-export function container() {
+export function container(width = LAYOUT_MAX_WIDTH) {
   return css`
-    width: calc(${LAYOUT_MAX_WIDTH} - 2 * ${LAYOUT_HORIZONTAL_PADDING});
+    width: calc(${width}px - 2 * ${LAYOUT_HORIZONTAL_PADDING}px);
     height: 100%;
     margin: 0 auto;
-    padding: 0 ${LAYOUT_HORIZONTAL_PADDING};
+    padding: 0 ${LAYOUT_HORIZONTAL_PADDING}px;
   `
 }

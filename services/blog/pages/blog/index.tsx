@@ -13,7 +13,7 @@ interface Props {
 export default function Blog({ articles }: Props) {
   return (
     <>
-      <H1 css={marginBottom(28)}>최근 올라온 글</H1>
+      <H1 css={marginBottom('1.75rem')}>최근 올라온 글</H1>
 
       <ul>
         {articles.map((article) => (

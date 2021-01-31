@@ -1,4 +1,6 @@
 export * from './block'
 export * from './collection'
 export * from './page'
-export * from './post'
+export * from './text'
+export * from './equation'
+export * from './code'

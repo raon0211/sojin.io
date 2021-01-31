@@ -3,16 +3,23 @@ import BlogNavigationBar from 'components/Navigation'
 import { Container } from '@sojin-components/container'
 import { css, Global } from '@emotion/react'
 import normalize from 'emotion-normalize'
-import { anchorReset, listReset } from '@sojin-components/emotion-utils'
+import { anchorReset, listReset, zIndex } from '@sojin-components/emotion-utils'
 import { AsyncStylesheet } from '@sojin-components/next-utils'
+import { EquationStylesheet } from '@sojin-components/equation'
+
+const Z_INDEXES = {
+  navigationBar: 2,
+  content: 1,
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <BlogNavigationBar />
+      <BlogNavigationBar css={zIndex(Z_INDEXES.navigationBar)} />
       <Normalize />
-      <AsyncStylesheet href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900|Noto+Sans+JP:400,500,700,900" />
-      <Container>
+      <AsyncStylesheet href="https://fonts.googleapis.com/css?family=Fira+Code|Noto+Sans+KR:400,500,700,900|Noto+Sans+JP:400,500,700,900" />
+      <EquationStylesheet />
+      <Container css={zIndex(Z_INDEXES.content)}>
         <Component {...pageProps} />
       </Container>
     </>
@@ -45,6 +52,12 @@ function Normalize() {
         html {
           font-family: Noto Sans KR, Noto Sans JP, sans-serif;
           letter-spacing: -0.1px;
+          font-size: 20px;
+          word-break: keep-all;
+        }
+
+        pre {
+          font-size: 0.9rem;
         }
       `}
     />

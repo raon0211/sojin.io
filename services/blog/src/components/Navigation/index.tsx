@@ -4,9 +4,14 @@ import React from 'react'
 import { ROUTES } from '../../routes'
 import NavigationLogo from './Logo'
 
-export default function BlogNavigationBar() {
+interface Props {
+  className?: string
+}
+
+export default function BlogNavigationBar({ className }: Props) {
   return (
     <NavigationBar
+      className={className}
       left={
         <Link href={ROUTES.home()} passHref>
           <NavigationLogo />

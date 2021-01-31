@@ -5,7 +5,6 @@ import {
   typographyH3,
   typographyRegular,
 } from '@sojin-components/emotion-utils'
-import { isNotNil } from '@sojin/utils'
 import { memo } from 'react'
 import { Article } from '../models/article'
 
@@ -14,14 +13,12 @@ interface Props {
 }
 
 function ArticleItem({ article }: Props) {
-  const description = [article.publishedAt, article.description]
-    .filter(isNotNil)
-    .join(' · ')
-
   return (
-    <Container css={gutterVertical(12)}>
+    <Container css={gutterVertical('0.5rem')}>
       <h3 css={typographyH3()}>{article.title}</h3>
-      <p css={[typographyRegular(), fontColorTextSecondary()]}>{description}</p>
+      <p css={[typographyRegular(), fontColorTextSecondary()]}>
+        {article.description}
+      </p>
     </Container>
   )
 }
@@ -29,5 +26,5 @@ function ArticleItem({ article }: Props) {
 export default memo(ArticleItem)
 
 const Container = styled.article`
-  padding: 16px 0;
+  padding: 1rem 0;
 `

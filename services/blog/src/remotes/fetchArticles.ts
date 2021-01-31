@@ -2,9 +2,9 @@ import {
   fetchNotionCollection,
   fetchNotionPageBlocks,
   isCollectionViewBlock,
-  parsePropertyValueOfType,
   NotionCollectionSchemaType,
 } from '@sojin/notion'
+import { parsePropertyValueOfType } from '@sojin/notion/src/parsers/block/properties'
 import { isNotNil } from '@sojin/utils'
 import { BLOG_INDEX_ID } from 'constants/blog-index-id'
 import { Article } from '../models/article'
@@ -28,21 +28,24 @@ export async function fetchArticles() {
         return null
       }
 
+      const description = parsePropertyValueOfType(
+        block.properties.description,
+        NotionCollectionSchemaType.text
+      )
+      const publishedAt = parsePropertyValueOfType(
+        block.properties.date,
+        NotionCollectionSchemaType.date
+      )
+
       return {
         id: block.id,
         title: block.title,
-        description: parsePropertyValueOfType(
-          block.properties.description,
-          NotionCollectionSchemaType.text
-        ),
+        description: [publishedAt, description].filter(isNotNil).join(' · '),
         slug: parsePropertyValueOfType(
           block.properties.slug,
           NotionCollectionSchemaType.text
         ),
-        publishedAt: parsePropertyValueOfType(
-          block.properties.date,
-          NotionCollectionSchemaType.date
-        ),
+        publishedAt,
         isPublished:
           parsePropertyValueOfType(
             block.properties.published,

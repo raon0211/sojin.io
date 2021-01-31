@@ -9,7 +9,7 @@ import {
 const H1 = styled.h1`
   ${typographyH1()}
   ${marginTop(FONT_SIZE_H1)}
-	${marginBottom(4)}
+	${marginBottom('1rem')}
 `
 
 export { H1 }

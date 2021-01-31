@@ -1,108 +1,54 @@
-import { createObjectByKey, isNotNil } from '@sojin/utils'
-import {
-  NotionBlock,
-  NotionPageBlockProperty,
-  NotionPostBlock,
-  parseNotionPageBlockProperty,
-  parsePropertyValueOfType,
-} from '../../models'
-import {
-  NotionCollectionItemSchema,
-  NotionCollectionSchemaType,
-} from './collection'
-
 export type NotionBlockResponse =
   | NotionPageBlockResponse
   | NotionCollectionViewBlockResponse
   | NotionTextBlockResponse
+  | NotionEquationBlockResponse
+  | NotionCodeBlockResponse
+  | NotionBulletedItemResponse
+  | NotionNumberedItemResponse
+
+interface NotionBaseBlockResponse {
+  id: string
+  content?: string[]
+  properties?: NotionPageProperties
+  parent_id: string
+}
+
+// FIXME: Fix `any` typing
+export type NotionPropertyResponse = [string, any][]
 
 interface NotionPageProperties {
-  [propertyName: string]: string[][] | undefined
+  [propertyName: string]: NotionPropertyResponse | undefined
 }
 
-export interface NotionPageBlockResponse {
+export interface NotionPageBlockResponse extends NotionBaseBlockResponse {
   type: 'page'
-  id: string
-  parent_id: string
   content: string[]
-  properties?: NotionPageProperties
 }
 
-export interface NotionCollectionViewBlockResponse {
+export interface NotionCollectionViewBlockResponse
+  extends NotionBaseBlockResponse {
   type: 'collection_view'
   collection_id: string
   view_ids: string[]
-  parent_id: string
 }
 
-export interface NotionTextBlockResponse {
-  type: 'header' | 'sub_header' | 'text'
-  parent_id: string
-  properties?: NotionPageProperties
+export interface NotionTextBlockResponse extends NotionBaseBlockResponse {
+  type: 'header' | 'sub_header' | 'sub_sub_header' | 'text'
 }
 
-export function parseNotionBlockResponse({
-  id,
-  block,
-  schema,
-}: {
-  id: string
-  block: NotionBlockResponse
-  schema?: NotionCollectionItemSchema
-}): NotionBlock | null {
-  switch (block.type) {
-    case 'page': {
-      const properties = parsePageProperties(block.properties, schema)
-
-      return {
-        id,
-        type: 'page',
-        parentId: block.parent_id,
-        title: parsePropertyValueOfType(
-          properties.Page,
-          NotionCollectionSchemaType.title
-        ),
-        properties,
-      }
-    }
-    case 'collection_view':
-      return {
-        id,
-        type: 'collection_view',
-        collectionId: block.collection_id,
-        viewIds: block.view_ids,
-        parentId: block.parent_id,
-      }
-    case 'header':
-    case 'sub_header':
-    case 'text': {
-      const postBlock: NotionPostBlock = {
-        id,
-        type: block.type,
-        value: block.properties?.title?.[0][0] ?? null,
-        parentId: block.parent_id,
-      }
-
-      return postBlock
-    }
-    default:
-      return null
-  }
+export interface NotionEquationBlockResponse extends NotionBaseBlockResponse {
+  type: 'equation'
 }
 
-function parsePageProperties(
-  properties: NotionPageBlockResponse['properties'],
-  schema: NotionCollectionItemSchema | undefined
-) {
-  if (properties == null || schema == null) {
-    return {}
-  }
+export interface NotionCodeBlockResponse extends NotionBaseBlockResponse {
+  type: 'code'
+}
 
-  const items = Object.entries(properties)
-    .map(([key, value]): NotionPageBlockProperty | null => {
-      return parseNotionPageBlockProperty(schema, key, value)
-    })
-    .filter(isNotNil)
+export interface NotionNumberedItemResponse extends NotionBaseBlockResponse {
+  type: 'numbered_list'
+}
 
-  return createObjectByKey(items, (x) => x.name)
+export interface NotionBulletedItemResponse extends NotionBaseBlockResponse {
+  type: 'bulleted_list'
 }

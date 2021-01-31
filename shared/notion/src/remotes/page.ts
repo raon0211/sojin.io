@@ -1,7 +1,6 @@
-import { isNotNil } from '@sojin/utils'
 import { NotionBlock } from '../models'
+import { parseContentsOfBlock } from '../parsers/block/items'
 import { callNotionFunction } from './client'
-import { parseNotionBlockResponse } from './types/block'
 import { NotionRecordMapResponse } from './types/record-map'
 
 interface Options {
@@ -39,16 +38,10 @@ export async function fetchNotionPageBlocks({
     )
   }
 
-  const blocks = pageBlock.value.content
-    .map((id) => {
-      const blockResponse = response.recordMap.block[id]
-
-      return parseNotionBlockResponse({
-        id,
-        block: blockResponse.value,
-      })
-    })
-    .filter(isNotNil)
+  const blocks = parseContentsOfBlock(
+    pageBlock.value.content,
+    response.recordMap.block
+  )
 
   return blocks
 }

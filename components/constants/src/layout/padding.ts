@@ -1,1 +1,1 @@
-export const LAYOUT_HORIZONTAL_PADDING = '24px'
+export const LAYOUT_HORIZONTAL_PADDING = 24

@@ -10,6 +10,7 @@ import {
   gutterHorizontal,
   gutterVertical,
   fontWeight,
+  block,
 } from '@sojin-components/emotion-utils'
 
 const PROFILE_IMAGE_URL = 'https://static.sojin.io/images/leo.jpg'
@@ -26,18 +27,18 @@ function NavigationLogo({ href, onClick }: Props, ref: Ref<HTMLAnchorElement>) {
       ref={ref}
       href={href}
       onClick={onClick}
-      css={[flex({ alignItems: 'center' }), gutterHorizontal(8)]}
+      css={[flex({ alignItems: 'center' }), gutterHorizontal('0.5rem')]}
     >
       <img
         src={PROFILE_IMAGE_URL}
         alt=""
         css={[circle('3rem'), backgroundColor(PROFILE_IMAGE_SUMMARY_COLOR)]}
       />
-      <div css={gutterVertical(8)}>
+      <div css={gutterVertical('0.25rem')}>
         <div css={[fontSizeRegular(), fontColorText(), fontWeight(700)]}>
           Sojin Park
         </div>
-        <small css={[fontSizeSmall(), fontColorTextSecondary()]}>
+        <small css={[fontSizeSmall(), fontColorTextSecondary(), block()]}>
           Frontend Dev
         </small>
       </div>

@@ -1,21 +1,24 @@
 import { ReactNode } from 'react'
 import styled from '@emotion/styled'
-import { NAVBAR_HEIGHT } from '@sojin-components/constants'
 import {
   container,
   flex,
   gutterHorizontal,
   marginBottom,
+  padding,
+  solidBackground,
 } from '@sojin-components/emotion-utils'
+import { LAYOUT_MAX_WIDTH } from '@sojin-components/constants'
 
 interface Props {
+  className?: string
   left?: ReactNode
   right?: ReactNode
 }
 
-export function NavigationBar({ left, right }: Props) {
+export function NavigationBar({ className, left, right }: Props) {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Container>
         <div
           css={[
@@ -35,15 +38,16 @@ export function NavigationBar({ left, right }: Props) {
 const Wrapper = styled.nav`
   position: sticky;
   width: 100%;
-  height: ${NAVBAR_HEIGHT};
   left: 0;
   top: 0;
   ${marginBottom('3rem')}
+  ${padding('1rem 0')}
+  ${solidBackground()}
 `
 
 const Container = styled.div`
   ${gutterHorizontal(24)}
-  ${container()}
+  ${container(LAYOUT_MAX_WIDTH + 100)}
   ${flex()}
 `
 

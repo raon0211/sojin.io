@@ -1,0 +1,19 @@
+{
+  "name": "@sojin-components/equation",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "dependencies": {
+    "@sojin-components/next-utils": "workspace:components/next-utils",
+    "katex": "^0.12.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@types/katex": "^0"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@sojin-components/next-utils": "*"
+  }
+}

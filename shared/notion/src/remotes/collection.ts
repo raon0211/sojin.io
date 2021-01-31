@@ -1,7 +1,7 @@
 import { isNotNil } from '@sojin/utils'
 import { isPageBlock, NotionCollectionViewBlock } from '../models'
+import { parseNotionBlockResponse } from '../parsers/block/items'
 import { callNotionFunction } from './client'
-import { parseNotionBlockResponse } from './types/block'
 import { NotionRecordMapResponse } from './types/record-map'
 
 interface NotionQueryCollectionResponse {
@@ -56,7 +56,7 @@ export async function fetchNotionCollection(
     .map((blockId) => {
       return parseNotionBlockResponse({
         id: blockId,
-        block: response.recordMap.block[blockId].value,
+        blockById: response.recordMap.block,
         schema: collection.value.schema,
       })
     })

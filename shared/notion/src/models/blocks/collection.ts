@@ -1,11 +1,10 @@
+import { NotionBaseBlock } from './base'
 import { NotionBlock } from './block'
 
-export interface NotionCollectionViewBlock {
-  id: string
+export interface NotionCollectionViewBlock extends NotionBaseBlock {
   type: 'collection_view'
   collectionId: string
   viewIds: string[]
-  parentId: string
 }
 
 export function isCollectionViewBlock(

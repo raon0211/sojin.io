@@ -26,7 +26,7 @@ module.exports = {
     {
       test: (value) => {
         const locator = pnpapi.findPackageLocator(value)
-        const name = locator?.name
+        const name = locator != null ? locator.name : undefined
 
         if (name != null) {
           return INTERNAL_PACKAGE_SCOPES.some((scope) => name.startsWith(scope))
