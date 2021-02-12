@@ -15,13 +15,21 @@ const Z_INDEXES = {
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head />
       <BlogNavigationBar css={zIndex(Z_INDEXES.navigationBar)} />
-      <Normalize />
-      <AsyncStylesheet href="https://fonts.googleapis.com/css?family=Fira+Code|Noto+Sans+KR:400,500,700,900|Noto+Sans+JP:400,500,700,900" />
-      <EquationStylesheet />
       <Container css={zIndex(Z_INDEXES.content)}>
         <Component {...pageProps} />
       </Container>
+    </>
+  )
+}
+
+function Head() {
+  return (
+    <>
+      <Normalize />
+      <AsyncStylesheet href="https://fonts.googleapis.com/css?family=Fira+Code|Noto+Sans+KR:400,500,700,900|Noto+Sans+JP:400,500,700,900" />
+      <EquationStylesheet />
     </>
   )
 }
