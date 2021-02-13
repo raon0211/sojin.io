@@ -10,7 +10,8 @@
   "workspaces": [
     "components/*",
     "services/*",
-    "shared/*"
+    "shared/*",
+    "devops/*"
   ],
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -61,5 +62,10 @@
     "@emotion/styled": "^11",
     "@storybook/theming": "patch:@storybook/theming@npm:6.1.15#.yarn-patches/@storybook/theming.patch",
     "@storybook/core": "patch:@storybook/core@npm:6.1.15#.yarn-patches/@storybook/core.patch"
+  },
+  "dependenciesMeta": {
+    "@dealmore/next-tf@2.7.9": {
+      "unplugged": true
+    }
   }
 }

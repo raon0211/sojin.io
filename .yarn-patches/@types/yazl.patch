@@ -1,0 +1,12 @@
+diff --git a/index.d.ts b/index.d.ts
+index 04bdcbb612fc4cad1ec0ac99cf37a75f9c33a376..4e24c1dc6da9a91e62d8feb8657793826fb3dd2b 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -39,6 +39,7 @@ export class ZipFile {
+     outputStream: NodeJS.ReadableStream;
+     addReadStream(input: NodeJS.ReadableStream, metadataPath: string, options?: Partial<ReadStreamOptions>): void;
+     addBuffer(buffer: Buffer, metadataPath: string, options?: Partial<Options>): void;
++    addDeflatedBuffer(buffer: Buffer, metadataPath: string, options?: Partial<Options> & { crc32: number; uncompressedSize: number }): void;
+     end(options?: EndOptions, finalSizeCallback?: () => void): void;
+ 
+     addEmptyDirectory(metadataPath: string, options?: Partial<DirectoryOptions>): void;

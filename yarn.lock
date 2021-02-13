@@ -1490,6 +1490,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dealmore/next-tf@npm:^2.7.9":
+  version: 2.7.9
+  resolution: "@dealmore/next-tf@npm:2.7.9"
+  checksum: 27a89b9f36dc66b49f1808af13f0ff1338917ddf19d69822f9a17f129f36868907a9fa60c60a5f7ab32257e4e2eb3c8df34c285150750c8c1c831b62335b846d
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.0.0, @emotion/babel-plugin@npm:^11.1.2":
   version: 11.1.2
   resolution: "@emotion/babel-plugin@npm:11.1.2"
@@ -2567,10 +2574,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sojin-devops/lambda-nextjs-bridge@workspace:devops/lambda-nextjs-bridge":
+  version: 0.0.0-use.local
+  resolution: "@sojin-devops/lambda-nextjs-bridge@workspace:devops/lambda-nextjs-bridge"
+  dependencies:
+    "@sojin/promise": "workspace:shared/promise"
+    "@types/aws-lambda": ^8.10.72
+    "@types/node": ^14.14.26
+  languageName: unknown
+  linkType: soft
+
 "@sojin-services/blog@workspace:services/blog":
   version: 0.0.0-use.local
   resolution: "@sojin-services/blog@workspace:services/blog"
   dependencies:
+    "@dealmore/next-tf": ^2.7.9
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.0.0
     "@next/env": ^10.0.6
@@ -2626,6 +2644,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sojin/promise@workspace:shared/promise":
+  version: 0.0.0-use.local
+  resolution: "@sojin/promise@workspace:shared/promise"
+  languageName: unknown
+  linkType: soft
+
 "@sojin/type-helpers@workspace:shared/type-helpers":
   version: 0.0.0-use.local
   resolution: "@sojin/type-helpers@workspace:shared/type-helpers"
@@ -2639,6 +2663,19 @@ __metadata:
     "@sojin/type-helpers": "workspace:shared/type-helpers"
   peerDependencies:
     "@sojin/type-helpers": "*"
+  languageName: unknown
+  linkType: soft
+
+"@sojin/zip@workspace:shared/zip":
+  version: 0.0.0-use.local
+  resolution: "@sojin/zip@workspace:shared/zip"
+  dependencies:
+    "@types/buffer-crc32": ^0
+    "@types/fs-extra": ^9
+    "@types/yazl": "patch:@types/yazl@npm:2.4.2#../../.yarn-patches/@types/yazl.patch"
+    buffer-crc32: ^0.2.13
+    fs-extra: ^9.1.0
+    yazl: "patch:yazl@npm:2.5.1#../../.yarn-patches/yazl.patch"
   languageName: unknown
   linkType: soft
 
@@ -3538,6 +3575,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/aws-lambda@npm:^8.10.72":
+  version: 8.10.72
+  resolution: "@types/aws-lambda@npm:8.10.72"
+  checksum: c3ebdd2f106d074216ed80c515c47e1fde683f8418fc7903a4453f9da085df34f350ffa06abaa6b2f7bb2979d79cf3ce6d04bbe796190657514dadf115766cb1
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7":
   version: 7.1.12
   resolution: "@types/babel__core@npm:7.1.12"
@@ -3600,6 +3644,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/buffer-crc32@npm:^0":
+  version: 0.2.0
+  resolution: "@types/buffer-crc32@npm:0.2.0"
+  dependencies:
+    "@types/node": "*"
+  checksum: 7e2cccd2991b65f053b3cbf340439750ee72d7a21fe6126bf4f2908580b0f50ac547c0e565a7b0b2a9d636823729be1c38129a4da7b882d21f4c8836bf07842f
+  languageName: node
+  linkType: hard
+
 "@types/cacheable-request@npm:^6.0.1":
   version: 6.0.1
   resolution: "@types/cacheable-request@npm:6.0.1"
@@ -3652,6 +3705,15 @@ __metadata:
   version: 0.0.46
   resolution: "@types/estree@npm:0.0.46"
   checksum: 69fcf647706f5b6a475ec2f9aacf73b40866f577eef6c6f33de95cc3b4897381c2a8257646f13cd5d91fffc5debfe6289b6864ba29ad349ae68703f8b993c9f6
+  languageName: node
+  linkType: hard
+
+"@types/fs-extra@npm:^9":
+  version: 9.0.7
+  resolution: "@types/fs-extra@npm:9.0.7"
+  dependencies:
+    "@types/node": "*"
+  checksum: 079cc17a244d4a11f0553c16595002e859ed7b99d75bdce589bb19b92758dd1baca438d4afdca5d0945ec8edf1e377a5b9f5ad1984532179cc64e011fe4d6f6f
   languageName: node
   linkType: hard
 
@@ -3828,6 +3890,13 @@ __metadata:
   version: 13.13.41
   resolution: "@types/node@npm:13.13.41"
   checksum: 12d385e54cb3bfd7814a954f177b0d9e7a641bfac0e7898fa77f2db104b6a77f4366005436464f28990b5c212900febd551044067568e32619e4d98cae8ccfa4
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^14.14.26":
+  version: 14.14.26
+  resolution: "@types/node@npm:14.14.26"
+  checksum: 03067a0bdb168322d0efbd21176a61c042d2d37c18db5caa7bf3ad7f27364078c26f6861dd0d73278a1a4cdac51232c393e4087bf2dd63dc43fe4f2731c67a7c
   languageName: node
   linkType: hard
 
@@ -4048,6 +4117,24 @@ __metadata:
   dependencies:
     "@types/yargs-parser": "*"
   checksum: b67cf9e8f25865a6d6e72196fe7f47c6f328d2b7a54ed9fa0e60f9693abb332fec1a826f90310804f231bca28a2f71367956b3be2fdba2d4bf316f0394d84f4d
+  languageName: node
+  linkType: hard
+
+"@types/yazl@npm:2.4.2":
+  version: 2.4.2
+  resolution: "@types/yazl@npm:2.4.2"
+  dependencies:
+    "@types/node": "*"
+  checksum: 76f30bdfb72f310c788172ec2a053e74b37ccd47d3ae78e1db702401da886a85e5a707301514f7783bb5b8b366bd14cbb7d0e9c58c75f3e13dd121cd42db44a6
+  languageName: node
+  linkType: hard
+
+"@types/yazl@patch:@types/yazl@npm:2.4.2#../../.yarn-patches/@types/yazl.patch::locator=%40sojin%2Fzip%40workspace%3Ashared%2Fzip":
+  version: 2.4.2
+  resolution: "@types/yazl@patch:@types/yazl@npm%3A2.4.2#../../.yarn-patches/@types/yazl.patch::version=2.4.2&hash=322ea4&locator=%40sojin%2Fzip%40workspace%3Ashared%2Fzip"
+  dependencies:
+    "@types/node": "*"
+  checksum: 6bf6e84bda836cacecc67a018f86f26b0acaecfcc9436f2aefc750c194a0914767554202e7f955fcc5dd27c156de59a7f56484263b1884265f66aa17655e7c96
   languageName: node
   linkType: hard
 
@@ -9658,11 +9745,11 @@ fsevents@^1.2.7:
   linkType: hard
 
 "fsevents@^2.1.2, fsevents@~2.3.1":
-  version: 2.3.1
-  resolution: "fsevents@npm:2.3.1"
+  version: 2.3.2
+  resolution: "fsevents@npm:2.3.2"
   dependencies:
     node-gyp: latest
-  checksum: 32619a121e7f9ac8a5ce4954f5fdf06be68b7b1c16e4ac8fa6e5e13cbf97d83c86cdcdf872ab7b188ebb07b34d2271b7818aebfc305b4a7d5b35f4bc2117f8be
+  checksum: a1883f4ca12b8b403ec528f1a4cb312b0877eacd24719da535cabea78d6fdd78530e3538bdba590a1c0f6c295128f964a89182621885296353a44dcfa4f9db53
   languageName: node
   linkType: hard
 
@@ -9677,11 +9764,11 @@ fsevents@^1.2.7:
   linkType: hard
 
 "fsevents@patch:fsevents@^2.1.2#builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.1#builtin<compat/fsevents>":
-  version: 2.3.1
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.1#builtin<compat/fsevents>::version=2.3.1&hash=11e9ea"
+  version: 2.3.2
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#builtin<compat/fsevents>::version=2.3.2&hash=11e9ea"
   dependencies:
     node-gyp: latest
-  checksum: 66b24358e15cdd0f705b456346e58b4613f2bf54206b47874decda4152614fb0632d2d662c92b0ea54810109f646e5233e4cdd64dbb2a1949070ee5dc14dab87
+  checksum: 7b25d9251aefe433d508a0eb614217f0495ae05a9e8af15f7dbf9998e08c4e675acd1cf32361e0fcf71d917d9e8c4b76301fdc72a1ec1105a3ea0994f5e15a8d
   languageName: node
   linkType: hard
 
@@ -11041,7 +11128,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.1.0":
+"is-core-module@npm:^2.2.0":
   version: 2.2.0
   resolution: "is-core-module@npm:2.2.0"
   dependencies:
@@ -15604,22 +15691,22 @@ fsevents@^1.2.7:
   linkType: hard
 
 "resolve@^1.1.6, resolve@^1.12.0, resolve@^1.18.1, resolve@^1.3.2":
-  version: 1.19.0
-  resolution: "resolve@npm:1.19.0"
+  version: 1.20.0
+  resolution: "resolve@npm:1.20.0"
   dependencies:
-    is-core-module: ^2.1.0
+    is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: 8b23c7fde1224898ffb9fec2a2295a44d1564981343bdbf5fd3769465658f6a6f6647bb7ea66dfb3c1291ca86046b0233be2edfcd8ca05b38886521e8869677c
+  checksum: 0f5206d454b30e74d9b2d575b5f8aedf443c4d8b90b84cdf79474ade29bb459075220da3127b682896872a16022ed65cc4db09e0f23849654144d3d75c65cd1b
   languageName: node
   linkType: hard
 
 "resolve@patch:resolve@^1.1.6#builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#builtin<compat/resolve>, resolve@patch:resolve@^1.18.1#builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#builtin<compat/resolve>":
-  version: 1.19.0
-  resolution: "resolve@patch:resolve@npm%3A1.19.0#builtin<compat/resolve>::version=1.19.0&hash=3388aa"
+  version: 1.20.0
+  resolution: "resolve@patch:resolve@npm%3A1.20.0#builtin<compat/resolve>::version=1.20.0&hash=3388aa"
   dependencies:
-    is-core-module: ^2.1.0
+    is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: 188d5167e8578a9af8d194faf382b8f3526aad5145391c24ecdc6246c6fc82c10fc66d6352267f8e93c5977c503d61803169c91b9e2ee36dd2de759915c9b673
+  checksum: c4a515b76026806b5b26513fc7bdb80458c532bc91c02ef45ac928d1025585f93bec0b904be39c02131118a37ff7e3f9258f1526850b025d2ec0948bb5fd03d0
   languageName: node
   linkType: hard
 
@@ -16435,6 +16522,9 @@ fsevents@^1.2.7:
     regenerator-runtime: ^0.13.7
     typescript: ^4.1.3
     webpack: ^5.17.0
+  dependenciesMeta:
+    "@dealmore/next-tf@2.7.9":
+      unplugged: true
   languageName: unknown
   linkType: soft
 
@@ -17722,22 +17812,22 @@ fsevents@^1.2.7:
   linkType: hard
 
 typescript@^4.1.3:
-  version: 4.1.3
-  resolution: "typescript@npm:4.1.3"
+  version: 4.1.5
+  resolution: "typescript@npm:4.1.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 4f7ab1506ea22c7a1c313ec5b4285e93ce08d709ad6086d02d3096adb399ca339972ee56d1e578213c51dd0fb7b0fad50283c2d3c39642405644458ae29774f8
+  checksum: 29157c84426ac94ce97aac836264f303a26bd9fb30865650229e3406a36ca2e89735ef4b8878075ba1b95fa4d3ff9810057b64888700c28e20b4034a6db4da83
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@^4.1.3#builtin<compat/typescript>":
-  version: 4.1.3
-  resolution: "typescript@patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"
+  version: 4.1.5
+  resolution: "typescript@patch:typescript@npm%3A4.1.5#builtin<compat/typescript>::version=4.1.5&hash=cc6730"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 017af992148346e671d5b83b041773825888e9c94db8d2b9472cdbb6d6f0ee85927817473121524d319f8be6ffe5a6904d27ff6ef21356d2274fcadd52e17938
+  checksum: 58cc7786be0f8485c124944883b1384287532e4867ec37f1fb5cb2811dbc10f7a9decccad89097f924043285f3515bfd8223c61dbb4f88af00b2d8dc2ef73207
   languageName: node
   linkType: hard
 
@@ -18751,6 +18841,24 @@ typescript@^4.1.3:
     buffer-crc32: ~0.2.3
     fd-slicer: ~1.1.0
   checksum: 6d0c4e72706ec2df6ea842d09c792e7b34badc5db3d8a893e0c70d0e464c9bf82bac4b1690f3515b5e1d96b72fceb6cc4dd96465426077ba6dddc54e7dd4d517
+  languageName: node
+  linkType: hard
+
+"yazl@npm:2.5.1":
+  version: 2.5.1
+  resolution: "yazl@npm:2.5.1"
+  dependencies:
+    buffer-crc32: ~0.2.3
+  checksum: ee9bd2f57dfe1bdca333749bbb42b5a9e68a39871a31d8eed93b5606b8dfa1a1dda89af5cfd274a455c0f5f5790d743538067f2468d3bc8cd4227cdc94bc6ec3
+  languageName: node
+  linkType: hard
+
+"yazl@patch:yazl@npm:2.5.1#../../.yarn-patches/yazl.patch::locator=%40sojin%2Fzip%40workspace%3Ashared%2Fzip":
+  version: 2.5.1
+  resolution: "yazl@patch:yazl@npm%3A2.5.1#../../.yarn-patches/yazl.patch::version=2.5.1&hash=9c80cf&locator=%40sojin%2Fzip%40workspace%3Ashared%2Fzip"
+  dependencies:
+    buffer-crc32: ~0.2.3
+  checksum: 50f22fe9ff625898b78e806368d3cc70c7a533ffc7564c672114fcb88a1c50f2d8a9d84ebd5f4f332b8919964ca7b3d8e7130c4232251aeb0c6eda73f17558a4
   languageName: node
   linkType: hard
 

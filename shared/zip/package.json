@@ -1,0 +1,13 @@
+{
+  "name": "@sojin/zip",
+  "dependencies": {
+    "buffer-crc32": "^0.2.13",
+    "fs-extra": "^9.1.0",
+    "yazl": "patch:yazl@npm:2.5.1#../../.yarn-patches/yazl.patch"
+  },
+  "devDependencies": {
+    "@types/buffer-crc32": "^0",
+    "@types/fs-extra": "^9",
+    "@types/yazl": "patch:@types/yazl@npm:2.4.2#../../.yarn-patches/@types/yazl.patch"
+  }
+}

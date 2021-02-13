@@ -1,0 +1,1 @@
+# lambda-nextjs-bridge
