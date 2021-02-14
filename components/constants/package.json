@@ -1,5 +1,6 @@
 {
   "name": "@sojin-components/constants",
   "main": "src/index.ts",
-  "module": "src/index.ts"
+  "module": "src/index.ts",
+  "sideEffects": false
 }

@@ -22,5 +22,6 @@
   "dependencies": {
     "@sojin-components/constants": "workspace:components/constants",
     "@sojin-components/emotion-utils": "workspace:components/emotion-utils"
-  }
+  },
+  "sideEffects": false
 }

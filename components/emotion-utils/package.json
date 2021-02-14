@@ -17,5 +17,6 @@
   },
   "dependencies": {
     "@sojin-components/constants": "workspace:components/constants"
-  }
+  },
+  "sideEffects": false
 }
