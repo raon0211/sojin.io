@@ -1,5 +1,5 @@
+import { getBufferFromStream } from '@sojin/buffer'
 import { ZipFile } from 'yazl'
-import { getBufferFromStream } from './buffer'
 import { ZipEntry } from './entry'
 
 const mtime = new Date(0)
@@ -34,6 +34,10 @@ export class Zip {
   public toStream() {
     this.zipfile.end()
 
-    return getBufferFromStream(this.zipfile.outputStream)
+    return this.zipfile.outputStream
+  }
+
+  public async toBuffer() {
+    return await getBufferFromStream(this.toStream())
   }
 }

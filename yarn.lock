@@ -2583,6 +2583,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sojin-devops/lambda-pack@workspace:devops/lambda-pack":
+  version: 0.0.0-use.local
+  resolution: "@sojin-devops/lambda-pack@workspace:devops/lambda-pack"
+  dependencies:
+    "@sojin-devops/lambda-nextjs-bridge": "workspace:devops/lambda-nextjs-bridge"
+    "@sojin/buffer": "workspace:shared/buffer"
+    "@sojin/regex": "workspace:shared/regex"
+    "@sojin/zip": "workspace:shared/zip"
+    "@yarnpkg/esbuild-plugin-pnp": ^0.0.1
+    async-sema: ^3.1.0
+    esbuild: ^0.8.46
+    ts-node: ^9.1.1
+  languageName: unknown
+  linkType: soft
+
 "@sojin-services/blog@workspace:services/blog":
   version: 0.0.0-use.local
   resolution: "@sojin-services/blog@workspace:services/blog"
@@ -2599,6 +2614,7 @@ __metadata:
     "@sojin-components/navigation": "workspace:components/navigation"
     "@sojin-components/next-utils": "workspace:components/next-utils"
     "@sojin-components/post": "workspace:components/post"
+    "@sojin-devops/lambda-pack": "workspace:devops/lambda-pack"
     "@sojin/configs": "workspace:shared/configs"
     "@sojin/notion": "workspace:shared/notion"
     "@sojin/utils": "workspace:shared/utils"
@@ -2624,6 +2640,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sojin/buffer@workspace:shared/buffer":
+  version: 0.0.0-use.local
+  resolution: "@sojin/buffer@workspace:shared/buffer"
+  languageName: unknown
+  linkType: soft
+
 "@sojin/configs@workspace:shared/configs":
   version: 0.0.0-use.local
   resolution: "@sojin/configs@workspace:shared/configs"
@@ -2641,6 +2663,12 @@ __metadata:
   dependencies:
     "@sojin/utils": "workspace:shared/utils"
     cross-fetch: ^3.0.6
+  languageName: unknown
+  linkType: soft
+
+"@sojin/regex@workspace:shared/regex":
+  version: 0.0.0-use.local
+  resolution: "@sojin/regex@workspace:shared/regex"
   languageName: unknown
   linkType: soft
 
@@ -2664,6 +2692,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@sojin/zip@workspace:shared/zip"
   dependencies:
+    "@sojin/buffer": "workspace:shared/buffer"
     "@types/buffer-crc32": ^0
     "@types/fs-extra": ^9
     "@types/yazl": "patch:@types/yazl@npm:2.4.2#../../.yarn-patches/@types/yazl.patch"
@@ -4579,6 +4608,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@yarnpkg/esbuild-plugin-pnp@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@yarnpkg/esbuild-plugin-pnp@npm:0.0.1"
+  dependencies:
+    tslib: ^1.13.0
+  peerDependencies:
+    esbuild: ^0.8.36
+  bin:
+    esbuild-plugin-pnp: ./lib/cli.js
+  checksum: ae0bdbfb5061cdbf92e005cbc6cd1e606445498c27db6032412f5121dcfdb9f9534b1e03d2a6494516ea6b3a0d1554fc5802ec4e1af0601cf4a78eca4d263d08
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -5211,6 +5253,13 @@ __metadata:
   version: 1.0.1
   resolution: "async-limiter@npm:1.0.1"
   checksum: d123312ace75c07399ddc58e06cc028dacce35f71cdf59cf9b22f6c31dde221c22285e6185ede823ecb67f3b3065e26205eb9f74fcbba3f12ce7a2c2b09d7763
+  languageName: node
+  linkType: hard
+
+"async-sema@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "async-sema@npm:3.1.0"
+  checksum: 43edc9b1829fda338ba34b602a91f96d4116e0dd51d2d1eb21888f978345ceb541a0f132afe0f2a8aabb70420bbe5cf2c69d16f835ff684fb72a335caa9c8f2e
   languageName: node
   linkType: hard
 
@@ -8624,6 +8673,15 @@ __metadata:
     es6-iterator: ^2.0.3
     es6-symbol: ^3.1.1
   checksum: 8dfd50b2919e16cf246ea9d5f9271eef466924248bc98a48a718cc149d0f67b708628c8e4bd32fa945a813c7780f94270f21ac16fff33c854a348db7e19f084d
+  languageName: node
+  linkType: hard
+
+"esbuild@npm:^0.8.46":
+  version: 0.8.46
+  resolution: "esbuild@npm:0.8.46"
+  bin:
+    esbuild: bin/esbuild
+  checksum: 1bcb6a4719e173df8bab1940961a75dc6c6b3afec52d226a6f6ad828959ff2365d97a0822f82f5862b9d29e7714bb23fa05958a44ccf5525509a18bce04e685f
   languageName: node
   linkType: hard
 
@@ -17720,7 +17778,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.8.1, tslib@npm:^1.9.0":
+"tslib@npm:^1.13.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: f44fe7f216946b17d3e3074df3746372703cf24e9127b4c045511456e8e4bf25515fb0a1bb3937676cc305651c5d4fcb6377b0588a4c6a957e748c4c28905d17

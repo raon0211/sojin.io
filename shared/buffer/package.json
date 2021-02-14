@@ -1,0 +1,5 @@
+{
+  "name": "@sojin/buffer",
+  "main": "./src/index.ts",
+  "type": "module"
+}

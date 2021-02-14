@@ -1,4 +1,4 @@
-import { compressBuffer } from './compress'
+import { compressBuffer } from '@sojin/buffer'
 import crc32 from 'buffer-crc32'
 
 export interface DeflatedZipEntry {

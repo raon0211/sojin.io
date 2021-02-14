@@ -1,0 +1,18 @@
+{
+  "name": "@sojin-devops/lambda-pack",
+  "main": "./src/index.ts",
+  "type": "module",
+  "sideEffects": false,
+  "dependencies": {
+    "@sojin-devops/lambda-nextjs-bridge": "workspace:devops/lambda-nextjs-bridge",
+    "@sojin/buffer": "workspace:shared/buffer",
+    "@sojin/regex": "workspace:shared/regex",
+    "@sojin/zip": "workspace:shared/zip",
+    "@yarnpkg/esbuild-plugin-pnp": "^0.0.1",
+    "async-sema": "^3.1.0",
+    "esbuild": "^0.8.46"
+  },
+  "devDependencies": {
+    "ts-node": "^9.1.1"
+  }
+}

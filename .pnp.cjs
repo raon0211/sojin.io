@@ -59,8 +59,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:devops/lambda-nextjs-bridge"
       },
       {
+        "name": "@sojin-devops/lambda-pack",
+        "reference": "workspace:devops/lambda-pack"
+      },
+      {
         "name": "@sojin-services/blog",
         "reference": "workspace:services/blog"
+      },
+      {
+        "name": "@sojin/buffer",
+        "reference": "workspace:shared/buffer"
       },
       {
         "name": "@sojin/configs",
@@ -69,6 +77,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "@sojin/notion",
         "reference": "workspace:shared/notion"
+      },
+      {
+        "name": "@sojin/regex",
+        "reference": "workspace:shared/regex"
       },
       {
         "name": "@sojin/type-helpers",
@@ -95,9 +107,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@sojin-components/next-utils", ["virtual:16c7dd42f76321a1a556982b1b826020b04b3f7334be299b0a2acce081984364a1664cd199798a171131d4173abf66b4ac5a4ca8dbe1c1d5f2aafda4c663c49c#workspace:components/next-utils", "virtual:6cbf938e492a7695919643b4bd20eb38681ebb365aa5d1eedfa263db0e6ea9513ade4d65f3304d5a2d42b052d7fc1fd2171843c2cce8fd2dba10678f3bc112d5#workspace:components/next-utils", "workspace:components/next-utils"]],
       ["@sojin-components/post", ["virtual:16c7dd42f76321a1a556982b1b826020b04b3f7334be299b0a2acce081984364a1664cd199798a171131d4173abf66b4ac5a4ca8dbe1c1d5f2aafda4c663c49c#workspace:components/post", "workspace:components/post"]],
       ["@sojin-devops/lambda-nextjs-bridge", ["workspace:devops/lambda-nextjs-bridge"]],
+      ["@sojin-devops/lambda-pack", ["workspace:devops/lambda-pack"]],
       ["@sojin-services/blog", ["workspace:services/blog"]],
+      ["@sojin/buffer", ["workspace:shared/buffer"]],
       ["@sojin/configs", ["workspace:shared/configs"]],
       ["@sojin/notion", ["workspace:shared/notion"]],
+      ["@sojin/regex", ["workspace:shared/regex"]],
       ["@sojin/type-helpers", ["workspace:shared/type-helpers"]],
       ["@sojin/utils", ["virtual:6998086ab756adee654e64367522c58a35773669990b38855498ea7afae284d5f840df73d06257327549050b83708bcb207b0fb0c8b7a2d744e3a09ed0164a2d#workspace:shared/utils", "workspace:shared/utils"]],
       ["@sojin/zip", ["workspace:shared/zip"]],
@@ -5512,6 +5527,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
+      ["@sojin-devops/lambda-pack", [
+        ["workspace:devops/lambda-pack", {
+          "packageLocation": "./devops/lambda-pack/",
+          "packageDependencies": [
+            ["@sojin-devops/lambda-pack", "workspace:devops/lambda-pack"],
+            ["@sojin-devops/lambda-nextjs-bridge", "workspace:devops/lambda-nextjs-bridge"],
+            ["@sojin/buffer", "workspace:shared/buffer"],
+            ["@sojin/regex", "workspace:shared/regex"],
+            ["@sojin/zip", "workspace:shared/zip"],
+            ["@yarnpkg/esbuild-plugin-pnp", "virtual:03ffdab428a22cc6866c4d68d704bbd659bf33cae4171b3ef59276ed20fd3536a644587fe23b68a244f5f2e8f2d9174eca08cb3cbf8caaa3e2638c7cb6c82a4b#npm:0.0.1"],
+            ["async-sema", "npm:3.1.0"],
+            ["esbuild", "npm:0.8.46"],
+            ["ts-node", "virtual:03ffdab428a22cc6866c4d68d704bbd659bf33cae4171b3ef59276ed20fd3536a644587fe23b68a244f5f2e8f2d9174eca08cb3cbf8caaa3e2638c7cb6c82a4b#npm:9.1.1"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@sojin-services/blog", [
         ["workspace:services/blog", {
           "packageLocation": "./services/blog/",
@@ -5529,6 +5561,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sojin-components/navigation", "virtual:16c7dd42f76321a1a556982b1b826020b04b3f7334be299b0a2acce081984364a1664cd199798a171131d4173abf66b4ac5a4ca8dbe1c1d5f2aafda4c663c49c#workspace:components/navigation"],
             ["@sojin-components/next-utils", "virtual:16c7dd42f76321a1a556982b1b826020b04b3f7334be299b0a2acce081984364a1664cd199798a171131d4173abf66b4ac5a4ca8dbe1c1d5f2aafda4c663c49c#workspace:components/next-utils"],
             ["@sojin-components/post", "virtual:16c7dd42f76321a1a556982b1b826020b04b3f7334be299b0a2acce081984364a1664cd199798a171131d4173abf66b4ac5a4ca8dbe1c1d5f2aafda4c663c49c#workspace:components/post"],
+            ["@sojin-devops/lambda-pack", "workspace:devops/lambda-pack"],
             ["@sojin/configs", "workspace:shared/configs"],
             ["@sojin/notion", "workspace:shared/notion"],
             ["@sojin/utils", "virtual:6998086ab756adee654e64367522c58a35773669990b38855498ea7afae284d5f840df73d06257327549050b83708bcb207b0fb0c8b7a2d744e3a09ed0164a2d#workspace:shared/utils"],
@@ -5555,6 +5588,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
+      ["@sojin/buffer", [
+        ["workspace:shared/buffer", {
+          "packageLocation": "./shared/buffer/",
+          "packageDependencies": [
+            ["@sojin/buffer", "workspace:shared/buffer"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@sojin/configs", [
         ["workspace:shared/configs", {
           "packageLocation": "./shared/configs/",
@@ -5575,6 +5617,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sojin/notion", "workspace:shared/notion"],
             ["@sojin/utils", "virtual:6998086ab756adee654e64367522c58a35773669990b38855498ea7afae284d5f840df73d06257327549050b83708bcb207b0fb0c8b7a2d744e3a09ed0164a2d#workspace:shared/utils"],
             ["cross-fetch", "npm:3.0.6"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@sojin/regex", [
+        ["workspace:shared/regex", {
+          "packageLocation": "./shared/regex/",
+          "packageDependencies": [
+            ["@sojin/regex", "workspace:shared/regex"]
           ],
           "linkType": "SOFT",
         }]
@@ -5615,6 +5666,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./shared/zip/",
           "packageDependencies": [
             ["@sojin/zip", "workspace:shared/zip"],
+            ["@sojin/buffer", "workspace:shared/buffer"],
             ["@types/buffer-crc32", "npm:0.2.0"],
             ["@types/fs-extra", "npm:9.0.7"],
             ["@types/yazl", "patch:@types/yazl@npm%3A2.4.2#../../.yarn-patches/@types/yazl.patch::version=2.4.2&hash=322ea4&locator=%40sojin%2Fzip%40workspace%3Ashared%2Fzip"],
@@ -7925,6 +7977,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@yarnpkg/esbuild-plugin-pnp", [
+        ["npm:0.0.1", {
+          "packageLocation": "./.yarn/cache/@yarnpkg-esbuild-plugin-pnp-npm-0.0.1-d41e416c1a-ae0bdbfb50.zip/node_modules/@yarnpkg/esbuild-plugin-pnp/",
+          "packageDependencies": [
+            ["@yarnpkg/esbuild-plugin-pnp", "npm:0.0.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:03ffdab428a22cc6866c4d68d704bbd659bf33cae4171b3ef59276ed20fd3536a644587fe23b68a244f5f2e8f2d9174eca08cb3cbf8caaa3e2638c7cb6c82a4b#npm:0.0.1", {
+          "packageLocation": "./.yarn/$$virtual/@yarnpkg-esbuild-plugin-pnp-virtual-06889029ed/0/cache/@yarnpkg-esbuild-plugin-pnp-npm-0.0.1-d41e416c1a-ae0bdbfb50.zip/node_modules/@yarnpkg/esbuild-plugin-pnp/",
+          "packageDependencies": [
+            ["@yarnpkg/esbuild-plugin-pnp", "virtual:03ffdab428a22cc6866c4d68d704bbd659bf33cae4171b3ef59276ed20fd3536a644587fe23b68a244f5f2e8f2d9174eca08cb3cbf8caaa3e2638c7cb6c82a4b#npm:0.0.1"],
+            ["@types/esbuild", null],
+            ["esbuild", "npm:0.8.46"],
+            ["tslib", "npm:1.14.1"]
+          ],
+          "packagePeers": [
+            "@types/esbuild",
+            "esbuild"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["abbrev", [
         ["npm:1.1.1", {
           "packageLocation": "./.yarn/cache/abbrev-npm-1.1.1-3659247eab-9f9236a3cc.zip/node_modules/abbrev/",
@@ -8683,6 +8758,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/async-limiter-npm-1.0.1-7e6819bcdb-d123312ace.zip/node_modules/async-limiter/",
           "packageDependencies": [
             ["async-limiter", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["async-sema", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/async-sema-npm-3.1.0-5029c51bfb-43edc9b182.zip/node_modules/async-sema/",
+          "packageDependencies": [
+            ["async-sema", "npm:3.1.0"]
           ],
           "linkType": "HARD",
         }]
@@ -12609,6 +12693,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["es5-ext", "npm:0.10.53"],
             ["es6-iterator", "npm:2.0.3"],
             ["es6-symbol", "npm:3.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["esbuild", [
+        ["npm:0.8.46", {
+          "packageLocation": "./.yarn/unplugged/esbuild-npm-0.8.46-ed38f30a24/node_modules/esbuild/",
+          "packageDependencies": [
+            ["esbuild", "npm:0.8.46"]
           ],
           "linkType": "HARD",
         }]
@@ -23020,6 +23113,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-node", "npm:9.1.1"]
           ],
           "linkType": "SOFT",
+        }],
+        ["virtual:03ffdab428a22cc6866c4d68d704bbd659bf33cae4171b3ef59276ed20fd3536a644587fe23b68a244f5f2e8f2d9174eca08cb3cbf8caaa3e2638c7cb6c82a4b#npm:9.1.1", {
+          "packageLocation": "./.yarn/$$virtual/ts-node-virtual-24983c1156/0/cache/ts-node-npm-9.1.1-4ad31da228-a90db4a342.zip/node_modules/ts-node/",
+          "packageDependencies": [
+            ["ts-node", "virtual:03ffdab428a22cc6866c4d68d704bbd659bf33cae4171b3ef59276ed20fd3536a644587fe23b68a244f5f2e8f2d9174eca08cb3cbf8caaa3e2638c7cb6c82a4b#npm:9.1.1"],
+            ["@types/typescript", null],
+            ["arg", "npm:4.1.3"],
+            ["create-require", "npm:1.1.1"],
+            ["diff", "npm:4.0.2"],
+            ["make-error", "npm:1.3.6"],
+            ["source-map-support", "npm:0.5.19"],
+            ["typescript", null],
+            ["yn", "npm:3.1.1"]
+          ],
+          "packagePeers": [
+            "@types/typescript",
+            "typescript"
+          ],
+          "linkType": "HARD",
         }],
         ["virtual:16c7dd42f76321a1a556982b1b826020b04b3f7334be299b0a2acce081984364a1664cd199798a171131d4173abf66b4ac5a4ca8dbe1c1d5f2aafda4c663c49c#npm:9.1.1", {
           "packageLocation": "./.yarn/$$virtual/ts-node-virtual-4efe99587c/0/cache/ts-node-npm-9.1.1-4ad31da228-a90db4a342.zip/node_modules/ts-node/",
