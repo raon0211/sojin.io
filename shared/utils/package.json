@@ -2,10 +2,12 @@
   "name": "@sojin/utils",
   "main": "src/index.ts",
   "module": "src/index.ts",
+  "type": "module",
   "dependencies": {
     "@sojin/type-helpers": "workspace:shared/type-helpers"
   },
   "peerDependencies": {
     "@sojin/type-helpers": "*"
-  }
+  },
+  "sideEffects": false
 }

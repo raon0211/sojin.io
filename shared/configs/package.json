@@ -7,5 +7,6 @@
   },
   "devDependencies": {
     "@types/babel__core": "^7"
-  }
+  },
+  "sideEffects": false
 }
