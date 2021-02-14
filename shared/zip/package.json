@@ -3,6 +3,7 @@
   "main": "src/index.ts",
   "type": "module",
   "dependencies": {
+    "@sojin/buffer": "workspace:shared/buffer",
     "buffer-crc32": "^0.2.13",
     "fs-extra": "^9.1.0",
     "yazl": "patch:yazl@npm:2.5.1#../../.yarn-patches/yazl.patch"

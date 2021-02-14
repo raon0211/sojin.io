@@ -1,0 +1,5 @@
+{
+  "name": "@sojin/regex",
+  "main": "./src/index.ts",
+  "type": "module"
+}
