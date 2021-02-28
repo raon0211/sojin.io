@@ -11,3 +11,8 @@
 node_modules
 .next
 .env
+
+.terraform*
+*.hcl
+*.tfstate
+*.tfstate.backup
