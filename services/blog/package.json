@@ -19,6 +19,7 @@
     "@sojin-components/navigation": "workspace:components/navigation",
     "@sojin-components/next-utils": "workspace:components/next-utils",
     "@sojin-components/post": "workspace:components/post",
+    "@sojin-devops/lambda-pack": "workspace:devops/lambda-pack",
     "@sojin/configs": "workspace:shared/configs",
     "@sojin/notion": "workspace:shared/notion",
     "@sojin/utils": "workspace:shared/utils",
